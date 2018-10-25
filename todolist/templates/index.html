@@ -3,7 +3,7 @@
 <html >
 <head>
     <meta charset="UTF-8">
-    <title>TodoApp - Django</title>
+    <title>Todo for BISON</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
@@ -41,13 +41,18 @@
                         <input type="date" id="dueDate" class="taskDate" name="date">
                         <label for="dueDate">Due Date</label>
                     </div>
-                    <div>
-                        <p>
-                        <input  type="file" class="" name="myfile">
-                        </p>
+                    <div class="input-group mb-3">
+                        
+                        
+                        <input type="file" name="myfile" class="btn btn-primary" value="Get image" 
+                        placeholder="Load Image"/>
+                        
+                        
 
 
                     </div>
+
+                    
                    
                     
                     <div class="row">
@@ -61,7 +66,8 @@
                         <li class="taskItem">
                             <input type="checkbox" class="taskCheckbox" name="checkedbox" id="{{ todo.id }}" 
                             value="{{ todo.id }}">
-                            <label for="{{ todo.id }}"><span class="complete-">{{ todo.title }}</span></label>
+                            <label for="{{ todo.id }}"><span class="complete-">{{ todo.title }}</span></label><br>
+                            <label for="{{ todo.id }}"><span class="complete-">{{ todo.content }}</span></label>
                             <span class="category-{{ todo.category }}">{{ todo.category }}</span>
                             <img src="{{ todo.image.url }}" width="80" height="80">
                             <strong class="taskDate"><i class="fa fa-calendar"></i>

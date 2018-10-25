@@ -9,7 +9,7 @@ html {
     font-size: 100%;
 }
 body {
-    background: #4295f4;
+    background: #4295f4 ; 
     font-family: 'Open Sans',sans-serif;
 }
 /* super basic grid structure */
@@ -87,6 +87,10 @@ input[type="date"], input[type="text"], select {
     -webkit-transition: background 0.3s;
             transition: background 0.3s;
 }
+
+
+
+
 input[type="date"] {
     cursor: pointer;
 }
@@ -156,21 +160,21 @@ button {
     font-size: 20px;
 }
 .taskAdd {
-    background: #444;
+    background: #19d80f;
     padding-left: 31px;
 }
 .taskAdd:hover {
     background: #303030;
 }
 .taskDelete {
-    background: #e74c3c;
+    background: #ed0707;
     padding-left: 30px;
 }
 .taskDelete:hover {
     background: #c0392b;
 }
 .taskDelete1 {
-    background: #e74c3c;
+    background: #ed0707;
     padding-right: 30px;
     width: 100px;
     height: 30px;
@@ -231,19 +235,19 @@ button {
 .category- {
     background: transparent;
 }
-.category-Personal {
+.category-Osobiste {
     background: #2980b9;
 }
 .category-Praca {
     background: #8e44ad;
 }
-.category-School {
+.category-Szkola {
     background: #f39c12;
 }
 .category-Dom {
     background: #16a085;
 }
-.category-Other {
+.category-Zdrowie {
     background: #d35400;
 }
 footer {
