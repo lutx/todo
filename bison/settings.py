@@ -20,8 +20,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 ## SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'okl$tt=6!=dleq7wsfje6$37chohfn=a1msk!tk7b77#g&qez!'
-SECRET_KEY= config('SECRET_KEY')
+SECRET_KEY = 'okl$tt=6!=dleq7wsfje6$37chohfn=a1msk!tk7b77#g&qez!'
+#SECRET_KEY= config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 #config('DEBUG',default=False )
@@ -83,9 +83,10 @@ DATABASES = {
     {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'bison',
-        'HOST': '',
+        'USER':'name'
+        'HOST': 'localhost',
         'PORT': '',
     }
 }
@@ -135,11 +136,11 @@ STATICFILES_DIRS = [
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "bison/static")
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
 
 MEDIA_URL= "/media/"
 
-MEDIA_ROOT= os.path.join(BASE_DIR, 'bison/media/')
+MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
 
 STATICFILES_STORAGE ='whitenoise.django.GzipManifestStaticFilesStorege'
 
