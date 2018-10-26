@@ -138,14 +138,25 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
 MEDIA_URL= "/media/"
 
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
 
-STATICFILES_STORAGE ='whitenoise.django.GzipManifestStaticFilesStorege'
+#STATICFILES_STORAGE ='whitenoise.django.GzipManifestStaticFilesStorege'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     #'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
+MIDDLEWARE_CLASSES = (
+    # Simplified static file serving.
+    # https://warehouse.python.org/project/whitenoise/
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    )
+
