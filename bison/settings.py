@@ -19,11 +19,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'okl$tt=6!=dleq7wsfje6$37chohfn=a1msk!tk7b77#g&qez!'
-
+## SECURITY WARNING: keep the secret key used in production secret!
+#SECRET_KEY = 'okl$tt=6!=dleq7wsfje6$37chohfn=a1msk!tk7b77#g&qez!'
+SECRET_KEY= config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = config('DEBUG',default=False)
 
 ALLOWED_HOSTS = []
 
@@ -77,16 +77,12 @@ WSGI_APPLICATION = 'bison.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'default':dj_database_url.config(default=config(DATABASE_URL)) 
+    #{
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'bison',
-        'USER': 'luki',
-        'PASSWORD': 'luki',
-        'HOST': '',
-        'PORT': '',
-    }
+        
+    #}
 }
 
 
