@@ -26,7 +26,7 @@ SECRET_KEY = 'okl$tt=6!=dleq7wsfje6$37chohfn=a1msk!tk7b77#g&qez!'
 DEBUG = False
 #config('DEBUG',default=False )
 
-ALLOWED_HOSTS = ['127.0.0.1','.herokuapp.com']
+ALLOWED_HOSTS = ['.herokuapp.com']
 
 
 # Application definition
@@ -86,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'bison',
         'USER':'name',
-        'HOST': 'localhost',
+        'HOST': '',
         'PORT': '',
     }
 }
