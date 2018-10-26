@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-
+import DATABASE_URL
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -26,7 +26,7 @@ SECRET_KEY = 'okl$tt=6!=dleq7wsfje6$37chohfn=a1msk!tk7b77#g&qez!'
 DEBUG = False
 #config('DEBUG',default=False )
 
-ALLOWED_HOSTS = ['.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','.herokuapp.com']
 
 
 # Application definition
@@ -86,9 +86,9 @@ DATABASES = {
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'bison',
-        #'USER':'name',
-        #'HOST': '',
-        #'PORT': '',
+        'USER':'name',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
