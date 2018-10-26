@@ -7,6 +7,9 @@ import requests
 def index(request): 
     todos = TodoList.objects.all() 
     categories = Category.objects.all()
+    r = requests.get('http://httpbin.org/status/418')
+    print(r.text)
+    return HttpResponse('<pre>' + r.text + '</pre>')
     
 
     
