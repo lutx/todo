@@ -129,9 +129,7 @@ USE_TZ = True
 
 
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "bison/static")
-]
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
@@ -156,3 +154,4 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     #'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
+django_heroku.settings(locals())
