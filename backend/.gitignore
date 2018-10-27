@@ -1,12 +1,14 @@
-<<<<<<< HEAD
-.py[cod]
-=======
-.DS_Store
+.DS_STORE
+
+# Virtualenv related
 bin/
 include/
 pip-selfcheck.json
 
-bison/settings//local.py
+# Django related 
+# src/<yourproject>/settings/local.py
+# static-cdn/  # any collected static files 
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -107,4 +109,3 @@ ENV/
 
 # mypy
 .mypy_cache/
->>>>>>> testow
