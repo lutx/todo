@@ -159,8 +159,8 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     #'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
-from dj_database_url import parse as dburl
+#from dj_database_url import parse as dburl
 #import bison_databese_url
-db_from_env = bison_database_url.config()
-DATABASES['default'].update(db_from_env)
-DATABASES['default']['CONN_MAX_AGE'] = 500
+#db_from_env = bison_database_url.config()
+#DATABASES['default'].update(db_from_env)
+#DATABASES['default']['CONN_MAX_AGE'] = 500
