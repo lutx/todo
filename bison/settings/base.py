@@ -25,7 +25,7 @@ SECRET_KEY = 'a-nea3p9q*!%)01k#*&5@5i=qykf3#mnnm5wga2-00xew57nx2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bisonn.herokuapp.com', '.yourdomain.com']
 
 
 # Application definition
