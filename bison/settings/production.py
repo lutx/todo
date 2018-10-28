@@ -24,7 +24,7 @@ SECRET_KEY =  os.environ.get('SECRET_KEY','okl$tt=6!=dleq7wsfje6$37chohfn=a1msk!
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['bisonn.herokuapp.com', '.yourdomain.com','127.0.0.1']
 
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'bison.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "templates")],
+        'DIRS': [os.path.join(BASE_DIR, "todolist/templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
