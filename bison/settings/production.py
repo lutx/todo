@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-
+from decouple import config
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -20,7 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY =  os.environ.get('SECRET_KEY','okl$tt=6!=dleq7wsfje6$37chohfn=a1msk!tk7b77#g&qez!')
+#SECRET_KEY =  os.environ.get('SECRET_KEY','okl$tt=6!=dleq7wsfje6$37chohfn=a1msk!tk7b77#g&qez!')
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -49,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 ROOT_URLCONF = 'bison.urls'
 
@@ -120,7 +123,7 @@ USE_TZ = True
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "bison/static")
-]
+
 
 STATIC_URL = '/static/'
 
@@ -129,6 +132,7 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "bison/static")
 MEDIA_URL= "/media/"
 
 MEDIA_ROOT= os.path.join(BASE_DIR, 'bison/media/')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
