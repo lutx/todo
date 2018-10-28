@@ -31,7 +31,5 @@ def index(request):
                     todo = TodoList.objects.get(id=int(todo_id)) #getting todo id
                     todo.delete() #deleting todo
                 return render(request, "index.html", {"todos": todos, "categories":categories})
-            if "taskDelete" in request.POST: #checking if there is a request to delete a todo
-                checkedlist = request.POST["checkbox"]
-                return render(request, "index.html", {"todos": todos, "categories":categories})
+            
     return render(request, "index.html",{"todos": todos, "categories":categories})
