@@ -31,7 +31,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 #DEBUG = False
 #config('DEBUG',default=False )
 
-ALLOWED_HOSTS = ['bisonn.herokuapp.com','.herokuapp.com']
+ALLOWED_HOSTS = ['bisonn.herokuapp.com','.herokuapp.com','127.0.0.1']
 
 
 # Application definition
